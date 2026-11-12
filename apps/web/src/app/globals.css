@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700;800;900&display=swap');
+@import "tailwindcss";
+@source "../../../../packages/ui";
+
+:root {
+  /* 🪸 Kino+ Deep Coral & Dark Mode Design System Tokens */
+  --background: #0e1013;
+  --foreground: #ffffff;
+  --foreground-muted: #a1a1aa;
+  
+  /* Deep Coral Primary Accent */
+  --color-primary: #f2545b;
+  --color-primary-hover: #e0434b;
+  --color-primary-light: #ff757b;
+  --color-primary-dark: #cc3941;
+  --color-primary-rgb: 242, 84, 91;
+  
+  --coral-deep: #f2545b;
+  --coral-deep-hover: #e0434b;
+  --coral-deep-light: #ff757b;
+  --coral-glow: rgba(242, 84, 91, 0.25);
+
+  /* Dark Mode Surface Hierarchy */
+  --surface-base: #0e1013;
+  --surface-elevated: #16181d;
+  --surface-card: #1c1e24;
+  --surface-hover: #242730;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(242, 84, 91, 0.4);
+}
+
+@font-face {
+  font-family: 'Rubik Marker Hatch';
+  src: url('/fonts/RubikMarkerHatch-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.kino-wordmark {
+  font-family: var(--font-rubik-marker), 'Rubik Marker Hatch', cursive, sans-serif;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: clip;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 🎨 Override browser default bright white/yellow autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+input:-moz-autofill,
+input:-moz-autofill-preview {
+  box-shadow: 0 0 0 1000px #141414 inset !important;
+  -moz-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* 🌊 Vertical Infinite Waterfall Marquee Animations */
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-down {
+  animation: marquee-down 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up {
+  animation: marquee-up 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down-slow {
+  animation: marquee-down 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-slow {
+  animation: marquee-up 36s linear infinite;
+  will-change: transform;
+}
+
+/* 🎨 Ultra-Minimal Sleek Dark Scrollbar System */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.38);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(242, 84, 91, 0.85);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Custom minimal scrollbar utility class for specific scroll containers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(15, 16, 20, 0.4);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 16, 20, 0.4);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(242, 84, 91, 0.75);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
