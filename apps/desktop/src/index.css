@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@source "../../../packages/ui";
+
+@font-face {
+  font-family: 'Rubik Marker Hatch';
+  src: url('/fonts/RubikMarkerHatch-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.kino-font {
+  font-family: 'Rubik Marker Hatch', cursive, sans-serif;
+}
+
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  color-scheme: dark;
+  background-color: #0e1013;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0e1013;
+  user-select: none;
+}
+
+/* Electron titlebar drag regions */
+.titlebar-drag {
+  -webkit-app-region: drag;
+}
+
+.titlebar-no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* 🎨 Ultra-Minimal Sleek Dark Scrollbar System */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.16) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #f2545b; /* Kino+ Deep Coral accent on active drag */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Explicit hide utility (used for horizontal pill/chip carousels) */
+.no-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* 🌊 Vertical Infinite Waterfall Marquee Animations */
+@keyframes marquee-down {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes marquee-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-down {
+  animation: marquee-down 32s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up {
+  animation: marquee-up 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-down-slow {
+  animation: marquee-down 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-up-slow {
+  animation: marquee-up 36s linear infinite;
+  will-change: transform;
+}
