@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "Kino+",
+    "slug": "kino-plus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icons/icon.png",
+    "scheme": "kinoplus",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "icon": {
+        "light": "./assets/icons/icon.png",
+        "dark": "./assets/icons/icon-dark.png"
+      },
+      "bundleIdentifier": "com.kino.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "backgroundColor": "#0e1013",
+        "monochromeImage": "./assets/icons/adaptive-icon-monochrome.png"
+      },
+      "notification": {
+        "icon": "./assets/icons/notification-icon.png",
+        "color": "#f2545b"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.kino.mobile",
+      "usesCleartextTraffic": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/icons/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/icons/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#000000",
+          "dark": {
+            "image": "./assets/icons/splash-icon-dark.png",
+            "backgroundColor": "#000000"
+          }
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.37729706552-db8995ff7jbotp2vojbprgfvlic51ka0"
+        }
+      ],
+      "expo-video",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Kino+ to scan the QR code on your Android TV.",
+          "microphonePermission": "Allow Kino+ to access your microphone.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
