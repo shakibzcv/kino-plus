@@ -1,0 +1,22 @@
+{
+  "name": "kino-plus",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "prettier": "3.9.6",
+    "tailwindcss": "^4.3.3",
+    "turbo": "^2.11.9",
+    "typescript": "7.0.2"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  }
+}
